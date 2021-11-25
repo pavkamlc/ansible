@@ -4,4 +4,4 @@
   - name: upgrade all packages
     yum: name=* state=latest
   - name: send info to zabbix
-    ansible.builtin.shell: name/etc/zabbix/scripts/yum_updates.sh
+    ansible.builtin.shell: /etc/zabbix/scripts/yum_updates.sh
