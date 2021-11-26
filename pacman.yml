@@ -1,0 +1,10 @@
+- name: Upgrade package foo
+  community.general.pacman:
+    name: foo
+    state: latest
+    update_cache: yes
+
+- name: Run the equivalent of "pacman -Syu" as a separate step
+  community.general.pacman:
+    update_cache: yes
+    upgrade: yes
