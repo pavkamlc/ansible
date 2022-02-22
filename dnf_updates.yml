@@ -14,7 +14,7 @@
 #2            timeout: 5
 #2          vars:
 #2            ansible_connection: ssh
-- name: add devices with connectivity to the "running_hosts" group
+        - name: add devices with connectivity to the "running_hosts" group
           group_by:
             key: "running_hosts"
       rescue:
