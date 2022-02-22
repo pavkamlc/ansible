@@ -6,13 +6,15 @@
   tasks:
     - block:
         - name: determine hosts that are up
-          ansible.netcommon.net_ping:
-            count: 2
-#          wait_for_connection:
-#            timeout: 5
-#          vars:
-#            ansible_connection: ssh
-        - name: add devices with connectivity to the "running_hosts" group
+          ansible.buildin.ping:
+            data: crash
+#1          ansible.netcommon.net_ping:
+#1            count: 2
+#2          wait_for_connection:
+#2            timeout: 5
+#2          vars:
+#2            ansible_connection: ssh
+- name: add devices with connectivity to the "running_hosts" group
           group_by:
             key: "running_hosts"
       rescue:
