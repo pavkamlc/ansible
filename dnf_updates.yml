@@ -6,10 +6,6 @@
   tasks:
     - block:
         - name: determine hosts that are up
-#3          ansible.builtin.ping:
-#3            data: crash
-#1          ansible.netcommon.net_ping:
-#1            count: 2
           wait_for_connection:
             timeout: 5
           vars:
@@ -21,7 +17,6 @@
         - debug: msg="cannot connect to {{inventory_hostname}}"
 
 - hosts: running_hosts
-#- hosts: all
   gather_facts: no
   tasks:
   - name: upgrade all packages
