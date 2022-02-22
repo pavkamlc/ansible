@@ -22,7 +22,7 @@
     community.general.pacman:
       update_cache: yes
       upgrade: yes
-  became: yes
+#    became: yes
 #  - name: send info to zabbix
 #    ansible.builtin.shell: /etc/zabbix/scripts/yum_updates.sh
 #    become: yes
