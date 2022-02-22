@@ -7,13 +7,14 @@
         - name: determine hosts that are up
           wait_for_connection:
             timeout: 5
-#          vars:
-#            ansible_connection: ssh
+          vars:
+            ansible_connection: ssh
         - name: add devices with connectivity to the "running_hosts" group
           group_by:
             key: "running_hosts"
       rescue:
         - debug: msg="cannot connect to {{inventory_hostname}}"
+        
 - hosts: running_hosts
   gather_facts: no
   tasks:
@@ -21,7 +22,7 @@
     community.general.pacman:
       update_cache: yes
       upgrade: yes
-#    became: yes
+    became: yes
 #  - name: send info to zabbix
 #    ansible.builtin.shell: /etc/zabbix/scripts/yum_updates.sh
 #    become: yes
