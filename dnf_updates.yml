@@ -21,7 +21,7 @@
 #        - debug: msg="cannot connect to {{inventory_hostname}}"
 
 #- hosts: running_hosts
--hosts: all
+- hosts: all
   gather_facts: no
   tasks:
   - name: upgrade all packages
