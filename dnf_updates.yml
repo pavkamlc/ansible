@@ -6,7 +6,7 @@
   tasks:
     - block:
         - name: determine hosts that are up
-          ansible.buildin.ping:
+          ansible.builtin.ping:
             data: crash
 #1          ansible.netcommon.net_ping:
 #1            count: 2
