@@ -1,7 +1,7 @@
 - name: Add the user 'james' with a bash shell, appending the group 'admins' and 'developers' to the user's groups
   ansible.builtin.user:
-    name: ansible
-    password: {pass}
+    name: "{{user}}"
+    password: "{{password}}"
     shell: /bin/bash
     groups: admins,developers
     append: yes
