@@ -6,5 +6,5 @@
       name: "{{ myuser }}"
       password: "{{ mypassword }}"
       shell: /bin/bash
-      groups: admins,developers
+      groups: users
       append: yes
