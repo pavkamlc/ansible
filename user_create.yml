@@ -2,11 +2,12 @@
 
 - hosts: all
   connection: local
+  gather_facts: no
   tasks:
   - name: Add the user 'james' with a bash shell, appending the group 'admins' and 'developers' to the user's groups
-    ansible.builtin.user:
-      name: "{{ myuser }}"
-      password: "{{ mypassword }}"
+    user:
+      name: {{ myuser }}
+      password: {{ mypassword }}
       shell: /bin/bash
       groups: users
       append: yes
