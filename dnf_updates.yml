@@ -25,3 +25,13 @@
   - name: send info to zabbix
     ansible.builtin.shell: /etc/zabbix/scripts/yum_updates.sh
     become: yes
+
+- hosts: localhost
+  tasks:
+  - mail:
+    host: mail.pavkamlc.cz
+    port: 25
+    to: 'pavkamlc@centrum.cz'
+    subject: 'Ansible-report dnf_updates.yml'
+    body: 'System {{ ansible_hostname }} has been successfully provisioned.'
+    delegate_to: localhost
