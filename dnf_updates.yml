@@ -35,5 +35,5 @@
       to: 'pavel.mlcoch@pavkamlc.cz'
       sender: 'mgmt1@pavkamlc.cz'
       subject: 'Ansible-report dnf_updates.yml'
-      body: 'System {{ ansible_hostname }} has been successfully provisioned.'
+      body: 'System {{ ansible_hostname }} has been successfully provisioned.\nansible_inventory_sources\nansible_play_hosts_all\nansible_user'
     delegate_to: localhost
