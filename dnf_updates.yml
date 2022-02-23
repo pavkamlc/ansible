@@ -32,7 +32,7 @@
     community.general.mail:
       host: mail.pavkamlc.cz
       port: 25
-      to: 'pavkamlc@centrum.cz'
+      to: 'pavel.mlcoch@pavkamlc.cz'
       subject: 'Ansible-report dnf_updates.yml'
       body: 'System {{ ansible_hostname }} has been successfully provisioned.'
     delegate_to: localhost
