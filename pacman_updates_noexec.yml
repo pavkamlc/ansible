@@ -22,4 +22,4 @@
     community.general.pacman:
       update_cache: yes
       upgrade: yes
-    became: yes
+    become: yes
