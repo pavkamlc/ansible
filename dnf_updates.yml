@@ -28,7 +28,7 @@
 
 - hosts: localhost
   tasks:
-  - mail:
+  - community.general.mail:
     host: mail.pavkamlc.cz
     port: 25
     to: 'pavkamlc@centrum.cz'
