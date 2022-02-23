@@ -6,8 +6,10 @@
   tasks:
   - name: Add the user 'james' with a bash shell, appending the group 'admins' and 'developers' to the user's groups
     user:
-      name: {{ myuser }}
-      password: {{ mypassword }}
+#      name: {{ myuser }}
+#      password: {{ mypassword }}
+      name: asdf
+      password: asdf
       shell: /bin/bash
       groups: users
       append: yes
