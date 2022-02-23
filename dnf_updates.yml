@@ -28,10 +28,11 @@
 
 - hosts: localhost
   tasks:
-  - name: community.general.mail:
-    host: mail.pavkamlc.cz
-    port: 25
-    to: 'pavkamlc@centrum.cz'
-    subject: 'Ansible-report dnf_updates.yml'
-    body: 'System {{ ansible_hostname }} has been successfully provisioned.'
+  - name: "send mail"
+    community.general.mail:
+      host: mail.pavkamlc.cz
+      port: 25
+      to: 'pavkamlc@centrum.cz'
+      subject: 'Ansible-report dnf_updates.yml'
+      body: 'System {{ ansible_hostname }} has been successfully provisioned.'
     delegate_to: localhost
