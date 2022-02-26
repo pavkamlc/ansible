@@ -23,3 +23,9 @@
       update_cache: yes
       upgrade: yes
     become: yes
+#1  - name: send info to zabbix
+#1    ansible.builtin.shell: /etc/zabbix/scripts/yum_updates.sh
+#1    become: yes
+#2  - name: pacman update
+#2    ansible.builtin.shell: pacman -Syu
+#2    become: yes
