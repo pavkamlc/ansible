@@ -2,14 +2,10 @@
 - hosts: all
   connection: local
   vars:
-    users:
-    - username:
-      - "{{ userplus }}"
-      groups: "ansible,wheel"
-      password:
-      - "{{ userpassword }}"
-    remove_users:
-    - "{{ userminus }}"
+    username: "{{ userplus }}"
+    groups: "ansible,wheel"
+    password: "{{ userpassword }}"
+    remove_user: "{{ userminus }}"
 
   handlers:
   - name: "Restart sshd"
@@ -20,27 +16,21 @@
   - name: "Create user accounts"
     user:
       name:
-      - "{{ item.username }}"
+      - "{{ username }}"
       groups:
-      - "{{ item.groups }}"
+      - "{{ groups }}"
       password:
-      - "{{ item.password }}"
+      - "{{ password }}"
       state: "present"
-    with_items:
-      - "{{ users }}"
   - name: "Remove old user accounts in remove_users"
     user:
-      name: "{{ item }}"
+      name: "{{ remove_user }}"
       state: "absent"
-    with_items: "{{ remove_users }}"
   - name: "Add authorized keys"
     authorized_key:
-      user:
-      - "{{ item.username }}"
+      user: "{{ username }}"
       key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
       path: ~/.ssh/authorized_keys
-    with_items:
-      - "{{ users }}"
   - name: "Allow admin users to sudo without a password"
     lineinfile:
       dest: "/etc/sudoers" # path: in version 2.3
