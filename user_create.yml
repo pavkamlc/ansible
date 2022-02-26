@@ -14,7 +14,8 @@
   tasks:
   - name: "Create user accounts"
     user:
-      name: {{ item.username }}
+      name:
+      - "{{ item.username }}"
       groups: {{ item.groups }}
       state: "present"
     with_items:
