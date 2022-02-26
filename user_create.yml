@@ -4,7 +4,8 @@
   vars:
     username: "{{ userplus }}"
     usergroups: "ansible,wheel"
-    userpasswordhash: "{{ userpassword | password_hash('sha512') }}"
+#    userpasswordhash: "{{ userpassword | password_hash('sha512') }}"
+    userpasswordhash: "{{ userpassword }}"
     username_remove: "{{ userminus }}"
 
   handlers:
