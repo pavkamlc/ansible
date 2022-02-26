@@ -17,8 +17,10 @@
     user:
       name: "{{ username }}"
       groups: "{{ usergroups }}"
-#      append: yes
+      append: yes
       password: "{{ userpasswordhash }}"
+      generate_ssh_key: yes
+      local: yes
       state: "present"
   - name: "Remove old user accounts in remove_users"
     user:
