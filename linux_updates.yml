@@ -16,6 +16,14 @@
       rescue:
         - debug: msg="cannot connect to {{inventory_hostname}}"
 
+# upgrade dnf
+- hosts: dnf:&running_hosts
+  gather_facts: no
+  tasks:
+  - name: upgrade all packages
+    yum: name=* state=latest
+    become: yes
+
 # upgrade arch
 - hosts: arch:&running_hosts
   gather_facts: no
@@ -24,14 +32,6 @@
     community.general.pacman:
       update_cache: yes
       upgrade: yes
-    become: yes
-
-# upgrade dnf
-- hosts: dnf:&running_hosts
-  gather_facts: no
-  tasks:
-  - name: upgrade all packages
-    yum: name=* state=latest
     become: yes
 
 #inform zabbix about upgrades
