@@ -28,7 +28,8 @@
 #    with_items: "{{ remove_users }}"
   - name: "Add authorized keys"
     authorized_key:
-      user: {{ item.username }}
+      user:
+      - "{{ item.username }}"
       key: "{{ lookup('file', 'files/' + item.username + '.key.pub') }}"
     with_items:
       - "{{ users }}"
