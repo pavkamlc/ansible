@@ -25,7 +25,7 @@
   - name: "Add authorized keys"
     authorized_key:
       user: {{ item.username }}
-      key: "{{ lookup('file', 'files/'+ item.username + '.key.pub') }}"
+      key: "{{ lookup('file', 'files/' + item.username + '.key.pub') }}"
     with_items: {{ users }}
   - name: "Allow admin users to sudo without a password"
     lineinfile:
