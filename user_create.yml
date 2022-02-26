@@ -24,10 +24,13 @@
     user:
       name: "{{ username_remove }}"
       state: "absent"
+  - name: upload user key
+    action: copy src=/home/ansible/.ssh/id_rsa.pub
+      dest=~/id_rsa.pub
   - name: "Add authorized keys"
     authorized_key:
       user: "{{ username }}"
-      key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
+      key: "{{ lookup('file', '~/id_rsa.pub') }}"
       path: ~/.ssh/authorized_keys
   - name: "Allow admin users to sudo without a password"
     lineinfile:
