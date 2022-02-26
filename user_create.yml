@@ -15,12 +15,10 @@
   tasks:
   - name: "Create user accounts"
     user:
-      name:
-      - "{{ username }}"
+      name: "{{ username }}"
       groups:
       - "{{ usergroups }}"
-      password:
-      - "{{ userpassword }}"
+      password: "{{ userpassword }}"
       state: "present"
   - name: "Remove old user accounts in remove_users"
     user:
