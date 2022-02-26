@@ -17,7 +17,7 @@
         - debug: msg="cannot connect to {{inventory_hostname}}"
 
 # upgrade arch
-- hosts: arch
+- hosts: arch:&running_hosts
   gather_facts: no
   tasks:
   - name: Run the equivalent of pacman Syu as a separate step
@@ -27,7 +27,7 @@
     become: yes
 
 # upgrade dnf
-- hosts: dnf
+- hosts: dnf:&running_hosts
   gather_facts: no
   tasks:
   - name: upgrade all packages
@@ -35,7 +35,7 @@
     become: yes
 
 #inform zabbix about upgrades
-- hosts: zabbix
+- hosts: zabbix:&running_hosts
   gather_facts: no
   tasks:
   - name: send info to zabbix
