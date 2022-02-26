@@ -17,7 +17,7 @@
     user:
       name: "{{ username }}"
       groups: "{{ usergroups }}"
-      append: yes
+#      append: yes
       password: "{{ userpasswordhash }}"
       state: "present"
   - name: "Remove old user accounts in remove_users"
