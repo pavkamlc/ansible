@@ -16,7 +16,8 @@
       name: {{ item.username }}
       groups: {{ item.groups }}
       state: "present"
-    with_items: {{ users }}
+    with_items:
+      - "{{ users }}"
 #  - name: "Remove old user accounts in remove_users"
 #    user:
 #      name: "{{ item }}"
