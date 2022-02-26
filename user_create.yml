@@ -3,9 +3,9 @@
   connection: local
   vars:
     username: "{{ userplus }}"
-    groups: "ansible,wheel"
-    password: "{{ userpassword }}"
-    remove_user: "{{ userminus }}"
+    usergroups: "ansible,wheel"
+    userpassword: "{{ userpassword }}"
+    username_remove: "{{ userminus }}"
 
   handlers:
   - name: "Restart sshd"
@@ -18,13 +18,13 @@
       name:
       - "{{ username }}"
       groups:
-      - "{{ groups }}"
+      - "{{ usergroups }}"
       password:
-      - "{{ password }}"
+      - "{{ userpassword }}"
       state: "present"
   - name: "Remove old user accounts in remove_users"
     user:
-      name: "{{ remove_user }}"
+      name: "{{ username_remove }}"
       state: "absent"
   - name: "Add authorized keys"
     authorized_key:
