@@ -6,7 +6,8 @@
     - username:
       - "{{ userplus }}"
       groups: "ansible,wheel"
-    remove_users: "{{ userminus }}"
+    remove_users:
+      - "{{ userminus }}"
 
 handlers:
   - name: "Restart sshd"
