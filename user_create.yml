@@ -4,9 +4,11 @@
   vars:
     users:
     - username:
-      - "{{ myuser }}"
+      - "{{ userplus }}"
       groups: "ansible,wheel"
-  handlers:
+    remove_users: "{{ userminus }}"
+
+handlers:
   - name: "Restart sshd"
     service:
       name: "sshd"
@@ -21,11 +23,11 @@
       state: "present"
     with_items:
       - "{{ users }}"
-#  - name: "Remove old user accounts in remove_users"
-#    user:
-#      name: "{{ item }}"
-#      state: "absent"
-#    with_items: "{{ remove_users }}"
+  - name: "Remove old user accounts in remove_users"
+    user:
+      name: "{{ item }}"
+      state: "absent"
+    with_items: "{{ remove_users }}"
   - name: "Add authorized keys"
     authorized_key:
       user:
