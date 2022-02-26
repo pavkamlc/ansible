@@ -6,6 +6,8 @@
     - username:
       - "{{ userplus }}"
       groups: "ansible,wheel"
+      password:
+      - "{{ userpassword }}"
     remove_users:
     - "{{ userminus }}"
 
@@ -21,6 +23,8 @@
       - "{{ item.username }}"
       groups:
       - "{{ item.groups }}"
+      password:
+      - "{{ item.password }}"
       state: "present"
     with_items:
       - "{{ users }}"
