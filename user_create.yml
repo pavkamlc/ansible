@@ -9,7 +9,7 @@
     remove_users:
     - "{{ userminus }}"
 
-handlers:
+  handlers:
   - name: "Restart sshd"
     service:
       name: "sshd"
