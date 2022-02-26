@@ -3,7 +3,8 @@
   connection: local
   vars:
     users:
-    - username: {{ myuser }}
+    - username:
+      - "{{ myuser }}"
       groups: "ansible,wheel"
   handlers:
   - name: "Restart sshd"
