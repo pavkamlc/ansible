@@ -31,6 +31,7 @@
       user:
       - "{{ item.username }}"
       key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
+      path: "~/.ssh/authorized_keys"
     with_items:
       - "{{ users }}"
   - name: "Allow admin users to sudo without a password"
