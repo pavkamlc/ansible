@@ -8,11 +8,11 @@
     userpasswordhash: "{{ userpassword | password_hash('sha512') }}"
     username_remove: "{{ userminus }}"
 
-#  handlers:
-#  - name: "Restart sshd"
-#    service:
-#      name: "sshd"
-#      state: "restarted"
+  handlers:
+  - name: "Restart sshd"
+    service:
+      name: "sshd"
+      state: "restarted"
   tasks:
   - name: "Create user accounts"
     become: true
