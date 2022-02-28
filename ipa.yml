@@ -1,6 +1,0 @@
----
-- hosts: all
-  tasks:
-  - name: install ipa-client
-    yum: name=ipa-client state=latest
-    become: yes

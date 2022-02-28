@@ -1,0 +1,19 @@
+---
+- hosts: all
+  tasks:
+  - name: install ipa-client
+    yum: name=ipa-client state=latest
+    become: yes
+    #kinit etc
+  - name: install zabbix-agent
+    yum: name=zabbix-agent state=latest
+    become: yes
+    #setup Server address
+  - name: install zabbix-sender
+    yum: name=zabbix-sender state=latest
+    become: yes
+    #setup yumtest script
+  - name: install bareos-filedaemon
+    yum: name=bareos-filedaemon state=latest
+    become: yes
+    #configure bareos-fd
