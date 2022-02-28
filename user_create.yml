@@ -1,7 +1,7 @@
 ---
 - hosts: all
-  #connection: local
   become: true
+  #connection: local
   vars:
     username: "{{ userplus }}"
     usergroups: "ansible,wheel"
@@ -17,6 +17,7 @@
   - name: "Create user accounts"
     user:
       name: "{{ username }}"
+      become: true
       groups: "{{ usergroups }}"
       append: yes
       password: "{{ userpasswordhash }}"
