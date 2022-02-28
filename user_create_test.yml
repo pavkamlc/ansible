@@ -1,9 +1,0 @@
----
-- hosts: all
-  #connection: local
-
-  tasks:
-  - name: upload_user_key
-    copy:
-      src: "/home/ansible/.ssh/id_rsa.pub"
-      dest: "/home/ansible/"
