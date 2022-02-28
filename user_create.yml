@@ -27,8 +27,10 @@
       name: "{{ username_remove }}"
       state: "absent"
   - name: upload user key
-    action: copy src=/home/ansible/.ssh/id_rsa.pub
-      dest=/home/ansible/id_rsa.pub
+    action: 
+      copy:
+        src: /home/ansible/.ssh/id_rsa.pub
+        dest: /home/ansible/id_rsa.pub
   - name: "Add authorized keys"
     authorized_key:
       user: "{{ username }}"
