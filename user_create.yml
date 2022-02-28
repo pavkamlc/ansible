@@ -35,7 +35,7 @@
   - name: "Add authorized keys"
     authorized_key:
       user: "{{ username }}"
-      key: "{{ lookup('file', '/home/ansible/id_rsa.pub') }}"
+      key: "{{ lookup('file', '/home/ansible/.ssh/id_rsa.pub') }}"
       path: /home/{{ username }}/.ssh/authorized_keys
 #  - name: "Allow admin users to sudo without a password"
 #    lineinfile:
