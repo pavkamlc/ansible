@@ -8,11 +8,11 @@
     userpasswordhash: "{{ userpassword | password_hash('sha512') }}"
     username_remove: "{{ userminus }}"
 
-  handlers:
-  - name: "Restart sshd"
-    service:
-      name: "sshd"
-      state: "restarted"
+#  handlers:
+#  - name: "Restart sshd"
+#    service:
+#      name: "sshd"
+#      state: "restarted"
   tasks:
   - name: "Create user accounts"
     become: true
@@ -32,21 +32,21 @@
     copy:
       src: "/home/ansible/.ssh/id_rsa.pub"
       dest: "/home/ansible/"
-  - name: "Add authorized keys"
-    authorized_key:
-      user: "{{ username }}"
-      key: "{{ lookup('file', '/home/ansible/id_rsa.pub') }}"
-      path: ~/.ssh/authorized_keys
-  - name: "Allow admin users to sudo without a password"
-    lineinfile:
-      dest: "/etc/sudoers" # path: in version 2.3
-      state: "present"
-      regexp: "^%wheel"
-      line: "%wheel ALL=(ALL) NOPASSWD: ALL"
-  - name: "Disable root login via SSH"
-    lineinfile:
-      dest: "/etc/ssh/sshd_config"
-      regexp: "^PermitRootLogin"
-      line: "PermitRootLogin no"
-    notify: "Restart sshd"
+#  - name: "Add authorized keys"
+#    authorized_key:
+#      user: "{{ username }}"
+#      key: "{{ lookup('file', '/home/ansible/id_rsa.pub') }}"
+#      path: ~/.ssh/authorized_keys
+#  - name: "Allow admin users to sudo without a password"
+#    lineinfile:
+#      dest: "/etc/sudoers" # path: in version 2.3
+#      state: "present"
+#      regexp: "^%wheel"
+#      line: "%wheel ALL=(ALL) NOPASSWD: ALL"
+#  - name: "Disable root login via SSH"
+#    lineinfile:
+#      dest: "/etc/ssh/sshd_config"
+#      regexp: "^PermitRootLogin"
+#      line: "PermitRootLogin no"
+#    notify: "Restart sshd"
 ...
