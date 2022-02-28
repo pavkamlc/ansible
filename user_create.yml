@@ -1,5 +1,22 @@
 ---
+# add devices with connectivity to the "running_hosts" group
 - hosts: all
+  connection: local
+  gather_facts: no
+  tasks:
+    - block:
+        - name: determine hosts that are up
+          wait_for_connection:
+            timeout: 5
+          vars:
+            ansible_connection: ssh
+        - name: running_hosts
+          group_by:
+            key: "running_hosts"
+      rescue:
+        - debug: msg="cannot connect to {{inventory_hostname}}"
+
+- hosts: running_hosts
   become: true
   #connection: local
   vars:
