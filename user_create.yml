@@ -29,7 +29,7 @@
   - name: upload user key
     copy:
       src: /home/ansible/.ssh/id_rsa.pub
-      dest: /home/ansible/id_rsa.pub
+      dest: /home/ansible/
   - name: "Add authorized keys"
     authorized_key:
       user: "{{ username }}"
