@@ -15,9 +15,9 @@
       state: "restarted"
   tasks:
   - name: "Create user accounts"
+    become: true
     user:
       name: "{{ username }}"
-      become: true
       groups: "{{ usergroups }}"
       append: yes
       password: "{{ userpasswordhash }}"
