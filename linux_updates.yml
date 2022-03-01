@@ -51,14 +51,11 @@
       port: 25
       to: 'pavel.mlcoch@pavkamlc.cz'
       sender: 'mgmt1@pavkamlc.cz'
-      subject: 'Ansible-report dnf_updates.yml'
+      subject: 'Ansible-report {{ inventory_file }} {{ ansible_play_batch }}'
       body: |
-        'System {{ ansible_hostname }} has been successfully provisioned.
-        {{ SEMAPHORE_PROJECT_NAME }}
-        {{ SEMAPHORE_ORGANIZATION_URL }}
-        {{ SEMAPHORE_JOB_ID }}
-        {{ SEMAPHORE_PIPELINE_RESULT }}
-        ansible_inventory_sources
-        ansible_play_hosts_all
-        ansible_user'
+        'System {{ ansible_hostname }} has been successfully provisioned 
+        as user {{ ansible_user }}
+        {{ ansible_inventory_sources }}
+        {{ ansible_play_hosts_all }}
+        {{ ansible_user }}'
     delegate_to: localhost
