@@ -52,5 +52,13 @@
       to: 'pavel.mlcoch@pavkamlc.cz'
       sender: 'mgmt1@pavkamlc.cz'
       subject: 'Ansible-report dnf_updates.yml'
-      body: 'System {{ ansible_hostname }} has been successfully provisioned.\nansible_inventory_sources\nansible_play_hosts_all\nansible_user'
+      body: |
+        'System {{ ansible_hostname }} has been successfully provisioned.
+        {{ SEMAPHORE_PROJECT_NAME }}
+        {{ SEMAPHORE_ORGANIZATION_URL }}
+        {{ SEMAPHORE_JOB_ID }}
+        {{ SEMAPHORE_PIPELINE_RESULT }}
+        ansible_inventory_sources
+        ansible_play_hosts_all
+        ansible_user'
     delegate_to: localhost
