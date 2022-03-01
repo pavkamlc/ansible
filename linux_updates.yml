@@ -51,11 +51,11 @@
       port: 25
       to: 'pavel.mlcoch@pavkamlc.cz'
       sender: 'mgmt1@pavkamlc.cz'
-      subject: 'Ansible-report {{ ansible_play_batch }}'
+      subject: 'Ansible-report {{ ansible_hostname }}'
       body: |
-        'System {{ ansible_hostname }} has been successfully provisioned 
+        System {{ ansible_hostname }} has been successfully provisioned 
+        inventory {{ ansible_inventory_sources }}
         as user {{ ansible_user }}
-        {{ ansible_inventory_sources }}
-        {{ ansible_play_hosts_all }}
-        {{ ansible_user }}'
+        on host {{ ansible_play_hosts_all }}
+        url: http://mgmt1.pavkamlc.cz:3000/project/1/templates
     delegate_to: localhost
