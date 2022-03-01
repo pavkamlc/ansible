@@ -51,7 +51,7 @@
       port: 25
       to: 'pavel.mlcoch@pavkamlc.cz'
       sender: 'mgmt1@pavkamlc.cz'
-      subject: 'Ansible-report {{ inventory_file }} {{ ansible_play_batch }}'
+      subject: 'Ansible-report {{ ansible_play_batch }}'
       body: |
         'System {{ ansible_hostname }} has been successfully provisioned 
         as user {{ ansible_user }}
