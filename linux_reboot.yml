@@ -1,0 +1,9 @@
+---
+# add devices with connectivity to the "running_hosts" group
+- hosts: all
+  gather_facts: no
+  strategy: free
+  tasks:
+  - name: upgrade all packages
+    yum: name=* state=latest
+    become: yes
