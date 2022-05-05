@@ -1,8 +1,18 @@
 ---
-# add devices with connectivity to the "running_hosts" group
-- hosts: all
+# add devices with connectivity to the "hosts" group
+- hosts: localhost
+  gather_facts: no
+  vars_prompt:
+  - name: target_host
+    prompt: please enter the target host IP
+    private: no
+  tasks:
+    - add_host:
+        name: "{{ target_host }}"
+        groups: dynamically_created_hosts
+- hosts: dynamically_created_hosts
   gather_facts: no
   strategy: free
   tasks:
   - name: reboot os
-    reboot:
+    reboot:  
