@@ -5,28 +5,33 @@ notebook.pavkamlc.cz
 server1.pavkamlc.cz
 server2.pavkamlc.cz
 
-[guestsdnf]
+[lxcdnf]
 backup2.pavkamlc.cz
+nextcloud2.pavkamlc.cz
+sql01.pavkamlc.cz
+zoneminder3.pavkamlc.cz
+
+[guestsdnf]
 ipa1.pavkamlc.cz
 mgmt1.pavkamlc.cz
-mmedia1.pavkamlc.cz
-nextcloud2.pavkamlc.cz
 office1.pavkamlc.cz
 openhab2.pavkamlc.cz
-sql01.pavkamlc.cz
 terminal2.pavkamlc.cz
 websrv2.pavkamlc.cz
 zabbix.pavkamlc.cz
 zimbra2.pavkamlc.cz
-zoneminder3.pavkamlc.cz
 
 [guestsapt]
+
+[lxcapt]
 mmedia1.pavkamlc.cz
 
 [zabbixagents:children]
 hosts
 guestsdnf
+lxcdnf
 guestsapt
+lxcapt
 
 [pcdnf]
 tomas.pavkamlc.cz
@@ -34,7 +39,9 @@ tomas.pavkamlc.cz
 [apt:children]
 hosts
 guestsapt
+lxcapt
 
 [dnf:children]
 guestsdnf
+lxcdnf
 pcdnf
