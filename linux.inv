@@ -9,8 +9,7 @@ server2.pavkamlc.cz
 backup2.pavkamlc.cz
 ipa1.pavkamlc.cz
 mgmt1.pavkamlc.cz
-mmedia1.pavkamlc.cz
-nextcloud1.pavkamlc.cz
+nextcloud2.pavkamlc.cz
 office1.pavkamlc.cz
 openhab2.pavkamlc.cz
 terminal2.pavkamlc.cz
@@ -20,6 +19,7 @@ zimbra2.pavkamlc.cz
 zoneminder3.pavkamlc.cz
 
 [guestsapt]
+mmedia1.pavkamlc.cz
 
 [zabbixagents:children]
 hosts
