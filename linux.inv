@@ -1,11 +1,11 @@
 [arch]
 notebook.pavkamlc.cz
 
-[virt]
+[hosts]
 server1.pavkamlc.cz
 server2.pavkamlc.cz
 
-[guests]
+[guestsdnf]
 backup2.pavkamlc.cz
 ipa1.pavkamlc.cz
 mgmt1.pavkamlc.cz
@@ -19,14 +19,20 @@ zabbix.pavkamlc.cz
 zimbra2.pavkamlc.cz
 zoneminder3.pavkamlc.cz
 
+[guestsapt]
+
 [zabbixagents:children]
-virt
-guests
+hosts
+guestsdnf
+guestsapt
 
 [pcdnf]
 tomas.pavkamlc.cz
 
+[apt:children]
+hosts
+guestsapt
+
 [dnf:children]
-virt
-guests
+guestsdnf
 pcdnf
