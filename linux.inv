@@ -30,8 +30,6 @@ mmedia1.pavkamlc.cz
 [zabbixagents:children]
 guestsdnf
 lxcdnf
-guestsapt
-lxcapt
 
 [pcdnf]
 tomas.pavkamlc.cz
