@@ -39,9 +39,9 @@
     apt: name=* state=latest update_cache=yes
     become: yes
   #inform zabbix about upgrades
-  - name: send info to zabbix
-    ansible.builtin.shell: /etc/zabbix/scripts/yum_updates.sh
-    become: yes
+  #- name: send info to zabbix
+  #  ansible.builtin.shell: /etc/zabbix/scripts/yum_updates.sh
+  #  become: yes
 
 # upgrade arch
 - hosts: arch:&running_hosts
