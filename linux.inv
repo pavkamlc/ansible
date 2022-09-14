@@ -30,7 +30,7 @@ mmedia1.pavkamlc.cz
 [zabbixagents:children]
 hosts
 guestsdnf
-guestapt
+guestsapt
 lxcdnf
 lxcapt
 
