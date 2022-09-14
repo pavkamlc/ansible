@@ -1,7 +1,10 @@
-[arch]
+[hwarch]
 notebook.pavkamlc.cz
 
-[hosts]
+[hwdnf]
+tomas.pavkamlc.cz
+
+[hwapt]
 server1.pavkamlc.cz
 server2.pavkamlc.cz
 
@@ -28,21 +31,19 @@ zimbra2.pavkamlc.cz
 mmedia1.pavkamlc.cz
 
 [zabbixagents:children]
-hosts
+hwapt
+hwdnf
 guestsdnf
 guestsapt
 lxcdnf
 lxcapt
 
-[pcdnf]
-tomas.pavkamlc.cz
-
 [apt:children]
-hosts
+hwapt
 guestsapt
 lxcapt
 
 [dnf:children]
 guestsdnf
 lxcdnf
-pcdnf
+hwdnf
