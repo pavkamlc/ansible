@@ -8,13 +8,6 @@ tomas.pavkamlc.cz
 server1.pavkamlc.cz
 server2.pavkamlc.cz
 
-[lxcdnf]
-backup2.pavkamlc.cz
-nextcloud2.pavkamlc.cz
-sql01.pavkamlc.cz
-zoneminder3.pavkamlc.cz
-syslog1.pavkamlc.cz
-
 [guestsdnf]
 ipa1.pavkamlc.cz
 mgmt1.pavkamlc.cz
@@ -27,8 +20,19 @@ zimbra2.pavkamlc.cz
 
 [guestsapt]
 
+[guestarch]
+
+[lxcdnf]
+backup2.pavkamlc.cz
+nextcloud2.pavkamlc.cz
+sql01.pavkamlc.cz
+zoneminder3.pavkamlc.cz
+syslog1.pavkamlc.cz
+
 [lxcapt]
 mmedia1.pavkamlc.cz
+
+[lxcarch]
 
 [zabbixagents:children]
 hwapt
@@ -47,3 +51,8 @@ lxcapt
 guestsdnf
 lxcdnf
 hwdnf
+
+[arch:children]
+guestarch
+lxcarch
+hwarch
