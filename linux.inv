@@ -28,8 +28,11 @@ zimbra2.pavkamlc.cz
 mmedia1.pavkamlc.cz
 
 [zabbixagents:children]
+hosts
 guestsdnf
+guestapt
 lxcdnf
+lxcapt
 
 [pcdnf]
 tomas.pavkamlc.cz
