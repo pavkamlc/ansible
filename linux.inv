@@ -18,16 +18,16 @@ websrv2.pavkamlc.cz
 zabbix.pavkamlc.cz
 zimbra2.pavkamlc.cz
 nextcloud3.pavkamlc.cz
+backup2.pavkamlc.cz
+sql02.pavkamlc.cz
+zoneminder3.pavkamlc.cz
+syslog2.pavkamlc.cz
 
 [guestsapt]
 
 [guestarch]
 
 [lxcdnf]
-backup2.pavkamlc.cz
-sql01.pavkamlc.cz
-zoneminder3.pavkamlc.cz
-syslog1.pavkamlc.cz
 
 [lxcapt]
 mmedia1.pavkamlc.cz
