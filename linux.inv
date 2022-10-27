@@ -20,17 +20,17 @@ zimbra2.pavkamlc.cz
 nextcloud3.pavkamlc.cz
 backup2.pavkamlc.cz
 sql02.pavkamlc.cz
-zoneminder3.pavkamlc.cz
+zoneminder4.pavkamlc.cz
 syslog2.pavkamlc.cz
 
 [guestsapt]
+mmedia2.pavkamlc.cz
 
 [guestarch]
 
 [lxcdnf]
 
 [lxcapt]
-mmedia1.pavkamlc.cz
 
 [lxcarch]
 
