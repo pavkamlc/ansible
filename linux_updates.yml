@@ -56,7 +56,7 @@
 # send info about result
 - hosts: localhost
   tasks:
-   - name: "Ansible Message"
+  - name: "Ansible Message"
     debug:
       msg: "{{ host.stdout }}"
   - name: "send mail"
