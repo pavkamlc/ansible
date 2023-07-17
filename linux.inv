@@ -3,11 +3,11 @@
 #lenovo.pavkamlc.cz
 
 [hwdnf]
+server1.pavkamlc.cz
+server2.pavkamlc.cz
 tomas.pavkamlc.cz
 
 [hwapt]
-server1.pavkamlc.cz
-server2.pavkamlc.cz
 
 [guestsdnf]
 ipa1.pavkamlc.cz
@@ -22,6 +22,7 @@ sql02.pavkamlc.cz
 zoneminder4.pavkamlc.cz
 syslog3.pavkamlc.cz
 mmedia3.pavkamlc.cz
+fs0.pavkamlc.cz
 
 [guestsapt]
 
