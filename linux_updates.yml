@@ -25,6 +25,9 @@
   - name: upgrade all packages
     yum: name=* state=latest
     become: yes
+  - name: clear dnf cache
+    ansible.builtin.shell: dnf clean all
+    become: yes
   - name: Print return information from the previous task
     ansible.builtin.debug:
       var: result
