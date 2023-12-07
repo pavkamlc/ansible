@@ -23,8 +23,7 @@
   strategy: free
   tasks:
   - name: upgrade all packages
-    yum: name=* state=latest
-    use_backend: dnf    
+    yum: name=* state=latest use_backend="dnf"    
     become: yes
   - name: clear dnf cache
     ansible.builtin.shell: dnf clean all
