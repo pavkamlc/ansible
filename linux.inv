@@ -1,16 +1,16 @@
-[hwarch]
+[archhw]
 #notebook.pavkamlc.cz
 #lenovo.pavkamlc.cz
 
-[serverdnf]
+[dnfservers]
 server2.pavkamlc.cz
 server3.pavkamlc.cz
 server4.pavkamlc.cz
 
-[desktopdnf]
+[dnfdesktops]
 tomas.pavkamlc.cz
 
-[guestsdnf]
+[dnfguests]
 ipa1.pavkamlc.cz
 mgmt1.pavkamlc.cz
 openhab2.pavkamlc.cz
@@ -27,30 +27,30 @@ fs0.pavkamlc.cz
 ovirt2.pavkamlc.cz
 power01.pavkamlc.cz
 
-[serverapt]
+[aptservers]
 
-[guestsapt]
+[aptguests]
 
-[guestarch]
+[archguests]
 
 [zabbixagents:children]
-serverapt
-serverdnf
-desktopdnf
-guestsdnf
-guestsapt
+aptservers
+dnfservers
+dnfdesktops
+dnfguests
+aptguests
 
-[desktop:children]
-desktopdnf
+[desktops:children]
+dnfdesktops
 
 [apt:children]
-serverapt
-guestsapt
+aptservers
+aptguests
 
 [dnf:children]
-guestsdnf
-serverdnf
-desktopdnf
+dnfguests
+dnfservers
+dnfdesktops
 
 [arch:children]
-guestarch
+archguests
