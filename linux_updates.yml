@@ -1,6 +1,6 @@
 ---
 # add devices with connectivity to the "running_hosts" group
-- hosts: desktops
+- hosts: desktop
   connection: local
   gather_facts: no
   strategy: free
