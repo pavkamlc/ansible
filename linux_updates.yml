@@ -18,7 +18,7 @@
         - debug: msg="cannot connect to {{inventory_hostname}}"
 
 # upgrade dnf
-- hosts: dnf:&running_desktops,dnfservers,dnfguests
+- hosts: dnf:&running_desktops,&dnfservers,&dnfguests
   gather_facts: no
   strategy: free
   tasks:
@@ -49,7 +49,7 @@
     become: yes
     
 # upgrade apt
-- hosts: apt:&running_desktops,aptservers,aptguests
+- hosts: apt:&running_desktops,&aptservers,&aptguests
   gather_facts: no
   strategy: free
   tasks:
