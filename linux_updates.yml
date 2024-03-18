@@ -23,10 +23,17 @@
   strategy: linear
   tasks:
   - name: upgrade all packages
-    yum: name=* state=latest use_backend="yum4"    
+    yum: name=* state=latest use_backend="yum4"   
     throttle: 1
+    async: 1000
+    poll: 0
+    delay: 100
     become: yes
   - name: clear dnf cache
+    throttle: 1
+    async: 1000
+    poll: 0
+    delay: 100
     ansible.builtin.shell: dnf clean all
     become: yes
   - name: Print return information from the previous task
