@@ -20,10 +20,11 @@
 # upgrade dnf
 - hosts: dnf:&running_desktops,dnfservers,dnfguests
   gather_facts: no
-  strategy: free
+  strategy: linear
   tasks:
   - name: upgrade all packages
     yum: name=* state=latest use_backend="yum4"    
+    throttle: 1
     become: yes
   - name: clear dnf cache
     ansible.builtin.shell: dnf clean all
